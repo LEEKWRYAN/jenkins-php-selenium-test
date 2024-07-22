@@ -1,5 +1,9 @@
 pipeline {
 	agent none
+	environment {
+        MAVEN_HOME = '/var/jenkins_home/apache-maven-3.9.8'
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+    }
 	stages {
 		stage('Integration UI Test') {
 			parallel {
